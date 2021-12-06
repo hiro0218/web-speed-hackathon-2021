@@ -1,4 +1,4 @@
-import http from 'http2';
+import http from 'http';
 
 import { app } from './app';
 import { insertSeeds } from './seeds';
