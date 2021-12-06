@@ -34,7 +34,7 @@ const CommentItem = ({ comment }) => {
           <p className="text-gray-800 text-sm leading-relaxed">{comment.text}</p>
           <p className="text-gray-500 text-xs">
             <time dateTime={comment.createdAt}>
-              {formatDate(new Date(post.createdAt))}
+              {formatDate(new Date(comment.createdAt))}
             </time>
           </p>
         </div>

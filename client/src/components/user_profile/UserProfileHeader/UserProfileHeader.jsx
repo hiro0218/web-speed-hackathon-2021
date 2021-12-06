@@ -39,7 +39,7 @@ const UserProfileHeader = ({ user }) => {
           </span>
           <span>
             <time dateTime={user.createdAt}>
-              {formatDate(new Date(post.createdAt))}
+              {formatDate(new Date(user.createdAt))}
             </time>
             からサービスを利用しています
           </span>
