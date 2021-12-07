@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect } from 'react';
+import { useRef, useState, useLayoutEffect } from 'react';
 
 /**
  * @typedef {object} Props
@@ -16,7 +16,7 @@ const AspectRatioBox = ({ aspectHeight, aspectWidth, children }) => {
   const ref = useRef(null);
   const [clientHeight, setClientHeight] = useState(0);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     // clientWidth とアスペクト比から clientHeight を計算する
     function calcStyle() {
       const clientWidth = ref.current.clientWidth;
