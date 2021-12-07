@@ -31,8 +31,6 @@
     "wicg-inert": "3.1.1"
   },
   "devDependencies": {
-    "@babel/core": "7.16.0",
-    "@babel/preset-env": "7.16.4",
     "@babel/preset-react": "7.16.0",
     "@types/jquery": "3.5.9",
     "@types/lodash": "4.14.177",
