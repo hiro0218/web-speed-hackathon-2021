@@ -1,4 +1,5 @@
 import bodyParser from 'body-parser';
+import compression from 'compression';
 import Express from 'express';
 import session from 'express-session';
 
@@ -8,6 +9,9 @@ import { staticRouter } from './routes/static';
 const app = Express();
 
 app.set('trust proxy', true);
+
+// compress responses
+app.use(compression());
 
 app.use(
   session({
