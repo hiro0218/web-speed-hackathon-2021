@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import sizeOf from 'image-size';
-import React from 'react';
+import { useMemo, useState, useCallback } from 'react';
 
 import { useFetch } from '../../../hooks/use_fetch';
 import { fetchBinary } from '../../../utils/fetchers';
@@ -18,17 +18,17 @@ import { fetchBinary } from '../../../utils/fetchers';
 const CoveredImage = ({ alt, src }) => {
   const { data, isLoading } = useFetch(src, fetchBinary);
 
-  const imageSize = React.useMemo(() => {
+  const imageSize = useMemo(() => {
     return data !== null ? sizeOf(Buffer.from(data)) : null;
   }, [data]);
 
-  const blobUrl = React.useMemo(() => {
+  const blobUrl = useMemo(() => {
     return data !== null ? URL.createObjectURL(new Blob([data])) : null;
   }, [data]);
 
-  const [containerSize, setContainerSize] = React.useState({ height: 0, width: 0 });
+  const [containerSize, setContainerSize] = useState({ height: 0, width: 0 });
   /** @type {React.RefCallback<HTMLDivElement>} */
-  const callbackRef = React.useCallback((el) => {
+  const callbackRef = useCallback((el) => {
     setContainerSize({
       height: el?.clientHeight ?? 0,
       width: el?.clientWidth ?? 0,
