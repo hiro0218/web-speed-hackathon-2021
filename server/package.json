@@ -12,6 +12,7 @@
     "prestart:init": "mkdirp ../upload/images ../upload/movies ../upload/sounds"
   },
   "dependencies": {
+    "@babel/core": "7.16.0",
     "@babel/node": "7.16.0",
     "@ffmpeg/core": "0.10.0",
     "@ffmpeg/ffmpeg": "0.10.1",
